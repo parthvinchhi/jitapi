@@ -1,23 +1,3 @@
-# jitapi
-
-`jitapi` is a package for Go, designed to fetch data from the database. It also provides a multiple functions to save the data in a csv or a json file.
-
-- **Connect**:  Connect is used to connect to database. It will return an error for better error handling.
-- **Query**: Query function returns the data that is fetch using the query passed while calling the function. It also returns an error.
-- **DbConfig**: 
-
-## Installation 
-
-To install `jitapi`, run:
-
-```sh
-go get github.com/parthvinchhi/jitapi
-```
-
-### Usage
-Here's an example of how to use `jitapi`:
-
-```
 package main
 
 import (
@@ -55,4 +35,3 @@ func main() {
 
 	fmt.Println(data)
 }
-```

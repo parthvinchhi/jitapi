@@ -4,7 +4,9 @@
 
 - **Connect**:  Connect is used to connect to database. It will return an error for better error handling.
 - **Query**: Query function returns the data that is fetch using the query passed while calling the function. It also returns an error.
-- **DbConfig**: 
+- **DbConfig**: Takes the Configuration of database connection.
+- **Postgres**: Generates a connection string with the given parameters and creates a connection pool.
+- **Connect**: Connects to the database
 
 ## Installation 
 
@@ -29,7 +31,7 @@ import (
 
 func main() {
 	dbconfig := jitapi.DbConfig{
-		DBType:     "db_type",
+		// DBType:     "db_type",
 		DBName:     "db_name",
 		DBPort:     "db_port",
 		DBHost:     "db_host",
@@ -38,6 +40,7 @@ func main() {
 		DBSslMode:  "db_sslmode",
 	}
 
+	// To connect to postgresql
 	connectionString := jitapi.Postgres{
 		Config: dbconfig,
 	}
@@ -46,7 +49,7 @@ func main() {
 		log.Fatalf("Error connecting to database: %v", err)
 	}
 
-	query := "you sql query"
+	query := "your sql query"
 
 	data, err := connectionString.Query(query)
 	if err != nil {
